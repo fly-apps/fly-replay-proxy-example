@@ -9,7 +9,7 @@ Rather than being a traditional reverse-proxy, we instead just need to return a 
 
 This is intended for you to play with it, and adapt it if you'd like. It doesn't handle things like TLS connections nor graceful shutdowns.
 
-**Usage**:
+### Usage
 
 ```bash
 # Build for local play
@@ -25,6 +25,8 @@ go build -o bin/prox
 # with a listen address (defaults to :8080)
 ./bin/prox -run [-addr ":8080"]
 ```
+
+### Example
 
 To play with the web server, I ran `curl` requests like this - which returns timing back to us.
 
@@ -54,6 +56,10 @@ Content-Length: 0
           time_total:  0.004364s
 ```
 
+### Trying Yourself
+
+After creating the database and generating some data, you can play with it yourself.
+
 You can find some example (fake) Hosts ahead of time using something like this:
 
 ```bash
@@ -74,6 +80,7 @@ In localhost tests, a request without a SQL lookup took about 4.1ms.
 A request resulting **with** a SQL lookup against 5000 rows (and an index), took about 4.5ms. Pretty fast.
 
 ### The Database
+
 The database `customers.db` contains a single `customers` table, creating via the following:
 
 ```sql
