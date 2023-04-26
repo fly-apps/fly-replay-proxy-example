@@ -3,7 +3,7 @@
 An example proxy application to use on [fly.io](https://fly.io), which makes use of the [fly-replay](https://fly.io/docs/reference/dynamic-request-routing/) header
 to help with dynamic request routing.
 
-Rather than being a traditional reverse-proxy, we instead just need to return a response with a `fly-replay`header, and the Fly Proxy will do the rest.
+Rather than being a traditional reverse-proxy, we instead just need to return a response with a `fly-replay` header, and the Fly Proxy will do the rest.
 
 ## How to Use
 
