@@ -36,6 +36,24 @@ curl -w "@curl-format.txt" -s -i \
     http://localhost:8080/
 ```
 
+An example response, with timing data output from `curl`:
+
+```
+HTTP/1.1 200 OK
+Fly-Replay: instance=4955097dd2d5473982aa26c66a0c1107
+Date: Wed, 26 Apr 2023 15:50:21 GMT
+Content-Length: 0
+
+     time_namelookup:  0.003899s
+        time_connect:  0.004087s
+     time_appconnect:  0.000000s
+    time_pretransfer:  0.004103s
+       time_redirect:  0.000000s
+  time_starttransfer:  0.004309s
+                     ----------
+          time_total:  0.004364s
+```
+
 You can find some example (fake) Hosts ahead of time using something like this:
 
 ```bash
