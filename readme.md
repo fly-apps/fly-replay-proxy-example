@@ -71,6 +71,20 @@ sqlite> .quit
 
 The `host`'s returned can be used with the Host header in your requests to get correct results from the code base via `-H "Host <somehost>"`.
 
+## Building and Running
+
+Compiling this "for production" requires some extra build flags [if you intend to use SQLite](https://github.com/mattn/go-sqlite3#compilation) as well.
+
+It's something like this:
+
+```bash
+CGO_ENABLED=1 GOOS=linux go build 
+  -a -o /proxy \
+  -ldflags '-linkmode external -extldflags "-static"' .
+```
+
+The included multi-stage Dockerfile will build the project properly for usage with SQLite, and run the web server.
+
 ## Using SQLite
 
 This comes with an example sqlite implementation, to show how making lookups can be quite fast.
